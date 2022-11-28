@@ -1,0 +1,32 @@
+<br><br>
+<div>
+    <h2 style="color: blue;"> Historial</h2>
+    <% if (personas.length> 0) { %>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">nombre</th>
+                    <th scope="col">apellido</th>
+                    <th scope="col">edad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( persona of personas ) { %>
+                    <tr>
+                        <th>
+                            <%= persona.name %>
+                        </th>
+                        <th>
+                            <%= persona.lastname %>
+                        </th>
+                        <th>
+                            <%= persona.age %>
+                        </th>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+        <% } else {%>
+            <p class="alert alert-danger">no se encontro data</p>
+            <% }%>
+</div>
