@@ -1,26 +1,27 @@
 <br><br>
 <div>
     <h2 style="color: blue;"> Historial</h2>
-    <% if (personas.length> 0) { %>
+    <% if (productos.length> 0) { %>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">nombre</th>
-                    <th scope="col">apellido</th>
-                    <th scope="col">edad</th>
+                    <th scope="col">precio</th>
+                    <th scope="col">thumbnail</th>
                 </tr>
+
             </thead>
             <tbody>
-                <% for( persona of personas ) { %>
+                <% for( producto of productos ) { %>
                     <tr>
                         <th>
-                            <%= persona.name %>
+                            <%= producto.nombre %>
                         </th>
                         <th>
-                            <%= persona.lastname %>
+                            <%= producto.precio %>
                         </th>
                         <th>
-                            <%= persona.age %>
+                            <img style="width: 100px;" src="<%= producto.thumbnail %>" alt="new">
                         </th>
                     </tr>
                     <% } %>
@@ -29,4 +30,8 @@
         <% } else {%>
             <p class="alert alert-danger">no se encontro data</p>
             <% }%>
+                <form action="/">
+                    <button type="submit">voler</button>
+
+                </form>
 </div>
