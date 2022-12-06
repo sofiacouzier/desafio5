@@ -14,16 +14,12 @@ class contenedor {
         }
     };
 
-    save = async (nombre, precio, thumbnail) => {
+    save = async (prod) => {
         const stock = await this.getAll();
 
-        const producto = {
-            nombre,
-            precio,
-            thumbnail,
-        };
-
+        const producto = prod
         stock.push(producto);
+        console.log(stock)
 
         try {
             await fs.promises.writeFile(this.path, JSON.stringify(stock, null, 2));
